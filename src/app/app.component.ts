@@ -1,3 +1,4 @@
+import { Task } from './task';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  newTask: Task;
+
+  constructor() {
+    this.newTask = new Task();
+  }
+
+  onSubmit() {
+    console.log(this.newTask);
+    this.newTask = new Task();
+  }
+
 }
